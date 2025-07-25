@@ -3,13 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notion Bilgi Çekici</title>
+  <title>Notion Bilgi Merkezi</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Notion Bilgi Merkezi</h1>
+      <p>Tüm bilgilerinizi tek yerden keşfedin</p>
+    </div>
+  </div>
+
+  <!-- Search Section -->
+  <div class="search-section">
+    <div class="container">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Bilgilerinizde arama yapın..." />
+        <button id="searchBtn" class="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Section -->
   <div class="container">
-    <h1>Notion Verileri</h1>
-    <div id="notion-content">Veriler yükleniyor...</div>
+    <div class="content-header">
+      <h2>Bilgi Kartları</h2>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">Tümü</button>
+        <button class="filter-btn" data-filter="product">Ürünler</button>
+        <button class="filter-btn" data-filter="info">Bilgiler</button>
+      </div>
+    </div>
+
+    <div id="notion-content" class="cards-grid">
+      <div class="loading">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>yok sana veri yükleniyor...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for detailed view -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
   </div>
 
   <script src="main.js"></script>
